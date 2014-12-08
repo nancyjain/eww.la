@@ -2,4 +2,19 @@
 
 {% block proposals_nav %}<li role="presentation" class="active"><a href="{% url 'proposals' %}">Proposals</a></li>{% endblock %}
 
-{% block content %}proposals.html{% endblock %}
+{% block content %}
+<h2>Proposals</h2>
+
+We propose that the way to make people understand the legalese in TOS/EULA/Licenses is to present the legalese in mutliple formats:
+<br /><br />
+1. Present the terms and conditions in comic format (similar to <a href="http://www.google.com/googlebooks/chrome/">Chrome's comic</a> or <a href="http://www.dvzine.org/zine/01-toc.html">Dvorak Zine</a>). A sample comic representation of first paragraph of <a href="https://info.yahoo.com/legal/in/yahoo/utos/en-in/">Yahoo! India Terms and Conditions</a> is (click to enlarge):
+<a href="https://dl.dropboxusercontent.com/u/40659160/koding/comic-1.jpg"><img src="https://dl.dropboxusercontent.com/u/40659160/koding/comic-1.jpg" height="400" width="700"/></a>
+<br /><br />
+2. We should present a summary of legalese in natural languages like English in simple English for laymans (E.g. <a href="http://www.google.com/policies/terms/">Plain English aka layman version of Google's Terms of Service</a>)
+<br /><br />
+3. We should present a one-line summary of all major clauses in TOS. (E.g. <a href="https://500px.com/terms">500px's Terms of Service</a> or <a href="https://creativecommons.org/licenses/">Commons Deed of Creative Commons</a>)
+<br /><br />
+4. We should invest efforts into an <a href="http://127.0.0.1:8000/summarizer/">automated agreement summarizer (similar to the one we made for this hackathon)</a> so that anyone should be able to translate gazillions of TOS/EULA/Licenses out there in wild on Internet.
+<br /><br />
+
+{% endblock %}

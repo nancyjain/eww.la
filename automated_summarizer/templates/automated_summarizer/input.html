@@ -2,4 +2,22 @@
 
 {% block summarizer_nav %}<li role="presentation" class="active"><a href="{% url 'input' %}">Auto-Summarizer</a></li>{% endblock %}
 
-{% block content %}{% endblock %}
+{% block content %}
+
+<h3>Automated Summarization tool</h3>
+Enter the URL of license/TOS/EULA in the box below and we will show you a 350 character (+/- 10%) summary of the input URL.
+
+<div class="alert alert-danger" role="alert">
+  Note: Most of the <a href="https://www.mashape.com/stremor/stremor-automated-summary-and-abstract-generator" class="alert-link">Mashape's summarization APIs</a> are broken<blockquote>Sorry, it appears the endpoint is not responding :-(</blockquote>So I had to temporarily use <a href="https://www.mashape.com/stremor/stremor-automated-summary-and-abstract-generator" class="alert-link">Stremor Automated Summary and Abstract Generator (hosted on Mashape.com)</a> for generating summaries. This generates 350 character (+/- 10%) summaries (which isn't sufficient to summarize TOS/EULA). Plus, the quality of the summary isn't that great. After this hackathon, I will use some other API for summarizing. This tool is just a proof-of-concept.<br /><br />Also, this service only 150 free requests/API calls per month. Please use wisely.
+</div>
+
+<form method="post" action="{% url 'output' %}">{% csrf_token %}
+{% csrf_token %}
+	<input type="url" name="license" id="license" placeholder="Enter the URL of license/TOS/EULA here." class="form-control"><br />
+    <span class="input-group-btn">
+        <input type="submit" value="Summarize" class="btn btn-default">
+    </span>
+
+</form>
+<br />
+{% endblock %}
